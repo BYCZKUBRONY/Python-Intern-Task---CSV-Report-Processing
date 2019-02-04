@@ -1,6 +1,6 @@
 # Python-Intern-Task---CSV-Report-Processing
 Python Intern Task - CSV Report Processing
-To run this script 
+To run this script  
 a)using PyCharm and other python IDE, add input csv file eg. 'input.csv' and add output csv file eg. 'output.csv' to the field Parameters in file Running configurations, click apply and ok.Now You can run the script. The input file should be in the same folder with  python scripts. If dont, You must put full path to the file. If the output file don't exist, script create a new csv file, with name You put as parameter.
 b) using windows command line, go to folder with script, press shift key and use right mouse button click open command window here. write python or python3 'name of file' 'name of csv input file' 'name of csv output file' click enter. The input file should be in the same folder with  python scripts. If dont, You must put full path to the file. If the output file don't exist, script create a new csv file, with name You put as parameter.
 In this script i made a class CSVReportProcessing with one field 'list'. It is a list that keep all good row read from input csv file, prepared to be saved. 
