@@ -9,7 +9,7 @@ In this script i made a class CSVReportProcessing with one field 'list'. It is a
 
 Class CSVReportProcessing have 4 method to help with this exercise. 
 
-    #This method round number of clicks in each field list element's.
+    #This method round 'number of clicks' element in each field list element's.
     
     round_number_of_clicks(self)
     
