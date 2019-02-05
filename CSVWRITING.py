@@ -5,7 +5,7 @@ import sys
 
 class CSVReportProcessing:
     # Constructor a  CSVReportProcessing class
-    # Field contains row's need to make a raport and will be save to the output csv file.
+    # Field 'self.list' contains row's need to make a raport and will be save to the output csv file.
     def __init__(self):
         self.list = []
 
