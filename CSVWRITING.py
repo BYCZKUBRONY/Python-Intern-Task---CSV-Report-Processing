@@ -11,8 +11,8 @@ class CSVReportProcessing:
 
     # This method round number of clicks in each field list element's.
     def round_number_of_clicks(self):
-        for i in self.list:
-            i[3] = int(round((i[3]), 0))
+        for element in self.list:
+            element[3] = int(round((element[3]), 0))
 
     # This method sort a field list to the given way.
     def list_sort(self):
@@ -26,8 +26,8 @@ class CSVReportProcessing:
         # The typical way to write a csv file,taken from python manual.
             with open(file, 'w', newline='\n', encoding='utf-8') as csvfile:
                 writer = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                for i in self.list:
-                    writer.writerow('{0},{1},{2},{3}'.format(i[0], i[1], i[2], i[3]))
+                for element in self.list:
+                    writer.writerow('{0},{1},{2},{3}'.format(element[0], element[1], element[2], element[3]))
 
     # This method read a csv file,
     # (taken the file name from sys.argv list in command-line arguments way, sys.argv[1] for input file name),
@@ -72,9 +72,9 @@ class CSVReportProcessing:
                         subdivisions = list(pycountry.subdivisions)
                         # In this place method checked that this subdivision exist in subdivisions list.
                         # If not alpha_3="XXX"
-                        for i in subdivisions:
-                            if i.name == row_after_splitting[1]:
-                                alpha_3 = i.country.alpha_3
+                        for subdivision in subdivisions:
+                            if subdivision.name == row_after_splitting[1]:
+                                alpha_3 = subdivision.country.alpha_3
                                 was_not_in_subdivisions_list = False
                         if was_not_in_subdivisions_list:
                             alpha_3 = "XXX"
@@ -84,13 +84,13 @@ class CSVReportProcessing:
                         number_of_clicks = (float(number_of_impressions) * float(row_after_splitting[3].split('%')[0])) / 100
                         # Method checked that it is the same country in alpha_3 variable and in object field list,
                         # and that in object field list the same date like in date variable.
-                        for i in self.list:
-                            date1 = i[0].split('-')
+                        for element in self.list:
+                            date1 = element[0].split('-')
                             # If all 'and conditions' are true, method overload,
                             #  third and fourth element in 'i' element of object field list.
-                            if (i[1] == alpha_3) and (date1[0] == date[2]) and (date1[1] == date[0]) and (date1[2] == date[1]):
-                                i[2] = i[2] + number_of_impressions
-                                i[3] = i[3] + number_of_clicks
+                            if (element[1] == alpha_3) and (date1[0] == date[2]) and (date1[1] == date[0]) and (date1[2] == date[1]):
+                                element[2] = element[2] + number_of_impressions
+                                element[3] = element[3] + number_of_clicks
                                 was_not_in_list = False
                             # If the last if conditions was not true, method add new element to the object field list.
                         if was_not_in_list:
